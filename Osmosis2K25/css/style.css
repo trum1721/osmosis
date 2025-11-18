@@ -1,0 +1,61 @@
+
+:root{
+  --bg-1:#02030a;
+  --bg-2:#041018;
+  --neon:#00ff77;
+  --neon-2:#b7ffd9;
+  --muted:rgba(255,255,255,0.92);
+  --card-radius:12px;
+  --max-width:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, Poppins, system-ui, -apple-system, 'Segoe UI';}
+body{min-height:100vh;background:linear-gradient(180deg,var(--bg-1),var(--bg-2));color:var(--muted);overflow-x:hidden;}
+.header-wrap{position:fixed;top:12px;left:0;right:0;display:flex;justify-content:center;z-index:1200}
+.nav-wrap{width:100%;max-width:var(--max-width);margin:10px;padding:10px 16px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.02);backdrop-filter:blur(8px);border:1px solid rgba(0,255,119,0.04)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:56px;height:56px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);object-fit:cover}
+.brand .title{font-family:Cinzel, serif;color:var(--neon-2);font-weight:700}
+.main-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.main-nav a{color:var(--neon-2);text-decoration:none;padding:8px 12px;border-radius:999px;background:rgba(0,255,119,0.03);border:1px solid rgba(0,255,119,0.05);font-weight:700}
+.hero{min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:14vh 16px 8vh;position:relative;overflow:hidden}
+.hero h1{font-family:Cinzel,serif;font-size:clamp(36px,8vw,80px);color:var(--neon);text-shadow:0 0 20px var(--neon);margin-bottom:6px;animation:glow 3s infinite alternate}
+@keyframes glow{from{text-shadow:0 0 18px var(--neon)}to{text-shadow:0 0 40px var(--neon)}}
+.subtitle{color:rgba(255,255,255,0.8);font-weight:600}
+.countdown{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.countbox{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:10px 14px;border-radius:10px;border:1px solid rgba(0,255,119,0.06);min-width:84px;font-weight:800;color:var(--neon-2)}
+
+/* sections */
+.section{padding:72px 16px 40px;position:relative;z-index:2}
+.container{max-width:var(--max-width);margin:0 auto}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.section-head h2{color:var(--neon-2);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:rgba(255,255,255,0.03);border-radius:12px;padding:16px;border:1px solid rgba(0,255,119,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6);transition:transform .26s;min-height:220px;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,255,119,0.06)}
+.img-wrap{height:160px;overflow:hidden;border-radius:10px;margin-bottom:12px}
+.img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.gimg img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+
+/* footer */
+footer{padding:36px 16px;text-align:center;border-top:1px solid rgba(255,255,255,0.04);color:rgba(255,255,255,0.6)}
+
+/* airplane */
+.airplane{position:absolute;width:80px;filter:drop-shadow(0 0 18px rgba(0,255,119,0.12));z-index:4;opacity:0.95}
+.plane1{animation:fly1 26s linear infinite}
+.plane2{animation:fly2 30s linear infinite}
+.plane3{animation:fly3 34s linear infinite}
+@keyframes fly1{0%{transform:translate(-12vw,8vh) rotate(0)}25%{transform:translate(18vw,5vh) rotate(10deg)}50%{transform:translate(48vw,12vh) rotate(-5deg)}75%{transform:translate(82vw,4vh) rotate(5deg)}100%{transform:translate(122vw,10vh) rotate(0)}}
+@keyframes fly2{0%{transform:translate(-18vw,40vh) rotate(10deg)}25%{transform:translate(20vw,30vh) rotate(-5deg)}50%{transform:translate(60vw,36vh) rotate(8deg)}75%{transform:translate(92vw,38vh) rotate(-3deg)}100%{transform:translate(132vw,40vh) rotate(0)}}
+@keyframes fly3{0%{transform:translate(-25vw,72vh) rotate(-5deg)}25%{transform:translate(20vw,68vh) rotate(8deg)}50%{transform:translate(58vw,74vh) rotate(-5deg)}75%{transform:translate(90vw,66vh) rotate(5deg)}100%{transform:translate(135vw,70vh) rotate(0)}}
+
+/* responsive */
+@media(max-width:800px){.nav-wrap{padding:8px}.hero{padding-top:10vh}.img-wrap{height:140px}}
+
+
+
+
+
+

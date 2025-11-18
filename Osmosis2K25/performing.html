@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>OSMOSIS 2K25 — Performing Arts</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#020202;
+  color:#fff;
+}
+header {
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.85);
+  z-index:10;
+  padding:10px 20px;
+  display:flex;
+  justify-content:center;
+  box-shadow:0 0 10px #00fff7;
+}
+.nav-wrap {
+  max-width:1200px;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.brand {display:flex; align-items:center;}
+.brand img {height:50px; margin-right:10px;}
+.title {font-family:'Cinzel',serif; font-size:1.8rem; color:#39ff14; text-shadow:0 0 10px #39ff14;}
+nav a {
+  margin:0 10px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition:0.3s;
+}
+nav a:hover {color:#00fff7; text-shadow:0 0 10px #00fff7;}
+
+.section {padding:30px 20px;}
+.section-head h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 38px;
+  color: #00eaff;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(0,234,255,0.9);
+  margin-bottom: 30px;
+}
+.note {
+  text-align:center;
+  font-size:1rem;
+  margin-bottom:30px;
+  color:#aaa;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.card {
+  position:relative;
+  background:rgba(0,0,0,0.6);
+  border-radius:12px;
+  overflow:hidden;
+  text-align:center;
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+  cursor:pointer;
+}
+.card:hover {
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 0 20px #39ff14, 0 0 40px #00fff7;
+}
+.card img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  transition:transform 0.5s ease, filter 0.5s ease;
+}
+.card:hover img {
+  transform:scale(1.1);
+  filter:brightness(1.2);
+}
+.card h3 {
+  margin:10px 0 6px;
+  color:#00fff7;
+  font-size:1.2rem;
+}
+.card p {margin:0; color:#ccc; font-size:0.95rem;}
+.card:hover h3 {color:#39ff14; text-shadow:0 0 10px #39ff14;}
+
+.rules {
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  color:#fff;
+  padding:20px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.4s ease;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:left;
+}
+.card:hover .rules {
+  opacity:1;
+  pointer-events:auto;
+}
+.rules h4 {
+  color:#39ff14;
+  text-align:center;
+  margin-bottom:10px;
+  text-shadow:0 0 10px #39ff14;
+}
+.rules ul {
+  padding-left:20px;
+  font-size:0.9rem;
+  color:#ccc;
+}
+footer {
+  text-align:center;
+  padding:20px;
+  color:rgba(255,255,255,0.6);
+  background:rgba(0,0,0,0.8);
+  margin-top:40px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">
+      <img src="images/osmosis.png" alt="logo">
+    <!--   <div class="title">OSMOSIS 2K25</div> -->
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="sports.html">Sports</a>
+      <a href="performing.html">Performing Arts</a>
+      <a href="finearts.html">Fine Arts</a>
+      <a href="literary.html">Literary</a>
+      <a href="finale.html">Finale</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+  <div class="section-head"><h2>Performing Arts — Live Stage Events on 28th November 2025</h2>
+  <h2></h2></div>
+    <div class="grid">
+    <div class="card">
+      <img src="images/solo.jpg" alt="Solo Dance">
+      <h3>Solo Dance</h3>
+     <!--  <p><b>Date:</b> 28 Nov 2025</p> -->
+      <div class="rules">
+        <h4>Rules — Solo Dance</h4>
+        <ul>
+          <li>Duration: 3 to 5 minutes.</li>
+          <li>Props allowed but must be managed by participant.</li>
+          <li>Music to be submitted in advance (MP3 format).</li>
+          <li>Vulgarity in lyrics or steps will lead to disqualification.</li>
+          <li>Judgment based on choreography, expression, and energy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/singing.jpg" alt="Singing">
+      <h3>Singing</h3>
+     <!--  <p><b>Date:</b> 28 Nov 2025</p> -->
+      <div class="rules">
+        <h4>Rules — Singing</h4>
+        <ul>
+          <li>Solo and duet categories allowed.</li>
+          <li>Time limit: 3 minutes.</li>
+          <li>Participants must bring their karaoke/instrumental track.</li>
+          <li>Language open but maintain decency.</li>
+          <li>Judgment based on vocal quality and expression.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/rap.jpg" alt="Rap Royale">
+      <h3>Rap Royale (Rap)</h3>
+  <!--     <p><b>Date:</b> 28 Nov 2025</p> -->
+      <div class="rules">
+        <h4>Rules — Rap Royale</h4>
+        <ul>
+          <li>Original compositions preferred.</li>
+          <li>Time limit: 2 minutes.</li>
+          <li>No explicit or offensive lyrics.</li>
+          <li>Beatboxing or backing track allowed.</li>
+          <li>Judgment based on flow, clarity, and creativity.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/BEAT RUSH (BEATBOXING).jpg" alt="Rap Royale">
+      <h3>BEAT RUSH (BEATBOXING)</h3>
+      <!-- <p><b>Date:</b> 28 Nov 2025</p> -->
+      <div class="rules">
+        <h4>Rules — BEAT RUSH (BEATBOXING)e</h4>
+        <ul>
+          <li>Maximum number of participantsin group category is 4 only.</li>
+           <li>Participantsshould avoid yelling,screaming during a competitor's routine. Be quiet during your
+           <li>opponent's round.</li>
+           <li>Be mindful of the audience, and limit the use of profanity.</li>
+           <li>Performances are limited by time 2 minutes.</li>
+           <li>Beatboxers are judged on their technique,style, and musical creativity</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/STAND UP COMEDY.jpg" alt="Stand Up Comedy">
+      <h3>Stand Up Comedy</h3>
+     <!--  <p><b>Date:</b> 28 Nov 2025</p> -->
+      <div class="rules">
+        <h4>Rules — Stand Up Comedy</h4>
+        <ul>
+          <li>Time limit: 5 minutes.</li>
+          <li>Solo performance only.</li>
+          <li>No vulgar or religious jokes.</li>
+          <li>Original content encouraged.</li>
+          <li>Judgment based on timing, originality, and delivery.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2025 Guardian Degree College — Osmosis 2K25</footer>
+<!-- Sparkle Background -->
+<style>
+.sparkle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00fff7;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00fff7, 0 0 12px #39ff14;
+  opacity: 0.8;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(120vh) scale(0.3);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1);
+    opacity: 1;
+  }
+}
+</style>
+
+<div class="sparkle"></div>
+
+<script>
+// Create 60 floating sparkles
+for (let i = 0; i < 60; i++) {
+  let s = document.createElement("div");
+  s.className = "spark";
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.animationDuration = 4 + Math.random() * 6 + "s";
+  s.style.animationDelay = Math.random() * 5 + "s";
+  document.querySelector(".sparkle").appendChild(s);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sports — Osmosis 2K25</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<style>
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #020202;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 10;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px #00fff7;
+}
+.nav-wrap {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {display:flex; align-items:center;}
+.brand img {height:50px; margin-right:10px;}
+.title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14;
+}
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #00fff7;
+  text-shadow: 0 0 10px #00fff7;
+}
+
+/* SECTION */
+.section {
+  padding: 30px 20px;
+}
+.section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 38px;
+  color: #00eaff;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(0,234,255,0.9);
+  margin-bottom: 30px;
+}
+.section p {
+  text-align:center;
+  opacity: 0.8;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARDS */
+.card {
+  position: relative;
+  background: rgba(0,0,0,0.6);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 20px #39ff14, 0 0 40px #00fff7;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform .5s ease, filter .5s ease;
+}
+.card:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.2);
+}
+
+/* TITLE */
+.card h3 {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+  color: #00fff7;
+}
+.card:hover h3 {
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14;
+}
+
+/* DATE */
+.card p {
+  margin: 6px 0 15px;
+  color: #ccc;
+}
+
+/* RULES OVERLAY */
+.rules {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.card:hover .rules {
+  opacity: 1;
+  pointer-events: auto;
+}
+.rules h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14;
+}
+.rules ul {
+  padding-left: 20px;
+  font-size: .9rem;
+  color:#ccc;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.8);
+  margin-top:40px;
+}
+
+/* SPARKLE */
+.sparkle {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00fff7;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00fff7, 0 0 12px #39ff14;
+  opacity: 0.8;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(120vh) scale(0.3); opacity:0.3; }
+  100% { transform: translateY(-20vh) scale(1); opacity:1; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">
+      <img src="images/osmosis.png" alt="logo">
+      <!-- <div class="title">OSMOSIS 2K25</div> -->
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="sports.html">Sports</a>
+      <a href="performing.html">Performing Arts</a>
+      <a href="finearts.html">Fine Arts</a>
+      <a href="literary.html">Literary</a>
+      <a href="finale.html">Finale</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+  <h2>Sports — Guardian Champion League</h2>
+  <p>Intercollegiate Sports Week — 22nd to 27th November 2025</p>
+
+  <div class="grid">
+
+    <!-- FOOTBALL -->
+    <div class="card">
+      <img src="images/football.png" alt="Football">
+      <h3>Football (7-A-Side)</h3>
+      <p><b>Date:</b> 22 Nov 2025</p>
+      <div class="rules">
+        <h4>Rules — Football</h4>
+        <ul>
+          <li>7 players per team.</li>
+          <li>Reporting time 7:30 AM.</li>
+          <li>Proper shoes compulsory.</li>
+          <li>Referee decisions final.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BOX CRICKET -->
+    <div class="card">
+      <img src="images/boxcricket.jpg" alt="Box Cricket">
+      <h3>Box Cricket</h3>
+      <p><b>Date:</b> 24 Nov 2025</p>
+      <div class="rules">
+        <h4>Rules — Box Cricket</h4>
+        <ul>
+          <li>Mixed teams allowed.</li>
+          <li>No aggressive play.</li>
+          <li>Umpire decision final.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- VOLLEYBALL -->
+    <div class="card">
+      <img src="images/volleyball.png" alt="Volleyball">
+      <h3>Volleyball</h3>
+      <p><b>Date:</b> 25 Nov 2025</p>
+      <div class="rules">
+        <h4>Rules — Volleyball</h4>
+        <ul>
+          <li>6 players per team.</li>
+          <li>Carry ID card.</li>
+          <li>Walkover after 15 minutes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ESPORTS -->
+    <div class="card">
+      <img src="images/esports.jpg" alt="Esports">
+      <h3>E-Sports</h3>
+      <p><b>Date:</b> 26 Nov 2025</p>
+      <div class="rules">
+        <h4>Rules — E-Sports</h4>
+        <ul>
+          <li>Mobile-only tournament.</li>
+          <li>No emulator allowed.</li>
+          <li>Team of 4.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JUDO -->
+    <div class="card">
+      <img src="images/judo.jpg" alt="Judo">
+      <h3>Judo</h3>
+      <p><b>Date:</b> 27 Nov 2025</p>
+      <div class="rules">
+        <h4>Rules — Judo</h4>
+        <ul>
+          <li>Weight categories applicable.</li>
+          <li>Judges' decision is final.</li>
+          <li>Proper uniform mandatory.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>© 2025 Guardian Degree College — Osmosis 2K25</footer>
+
+<!-- Sparkle Background -->
+<div class="sparkle"></div>
+<script>
+for (let i = 0; i < 60; i++) {
+  let s = document.createElement("div");
+  s.className = "spark";
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.animationDuration = 4 + Math.random() * 6 + "s";
+  s.style.animationDelay = Math.random() * 5 + "s";
+  document.querySelector(".sparkle").appendChild(s);
+}
+</script>
+
+</body>
+</html>

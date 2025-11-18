@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>OSMOSIS 2K25 — Workforce</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --neon: #00eaff;
+  --neon-2: #39ff14;
+  --bg1: #02040a;
+  --bg2: #041120;
+  --text: #e6faff;
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* Reset & base */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Inter",sans-serif;
+  color:var(--text);
+  background: radial-gradient(circle at 10% 10%, var(--bg1) 0%, var(--bg2) 60%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+/* Header */
+.header-wrap{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid rgba(0,234,255,0.08);
+}
+.nav-wrap{
+  max-width:1200px; margin:0 auto; padding:10px 18px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;box-shadow:0 0 12px rgba(0,234,255,0.08) inset}
+.title{font-family:"Cinzel",serif;font-size:20px;color:var(--neon);text-shadow:0 0 10px rgba(0,234,255,0.14)}
+
+/* nav */
+nav a{color:var(--text);margin-left:14px;text-decoration:none;font-weight:600;transition:.25s}
+nav a:hover{color:var(--neon);text-shadow:0 0 6px var(--neon)}
+
+/* page hero */
+.hero{
+  padding:80px 20px 30px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+.hero h1{
+  font-family:"Cinzel",serif;
+  font-size:40px;
+  margin:6px 0 6px;
+  color:var(--neon);
+  text-shadow:0 0 18px rgba(0,234,255,0.25);
+}
+.hero p{color:rgba(255,255,255,0.8);margin:0 0 18px;}
+
+/* workforce grid */
+.container{max-width:1200px;margin:0 auto;padding:10px}
+.section-head h2{font-family:"Cinzel",serif;color:var(--neon);font-size:28px;margin:0 0 6px;text-align:center;text-shadow:0 0 12px rgba(0,234,255,0.12)}
+.lead{color:rgba(255,255,255,0.7);text-align:center;margin-bottom:24px}
+
+/* grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+  align-items:start;
+}
+
+/* card */
+.member {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.012));
+  border:1px solid rgba(0,234,255,0.06);
+  border-radius:14px;
+  padding:18px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s ease, box-shadow .35s ease;
+  min-height:350px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.member:hover{
+  transform:translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6), 0 0 28px rgba(0,234,255,0.09);
+  border-color: rgba(0,234,255,0.26);
+}
+
+/* circular photo */
+.photo-wrap{
+  width:150px; height:150px; border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:6px;
+  box-shadow:
+    0 0 18px rgba(0,234,255,0.06),
+    inset 0 0 20px rgba(0,0,0,0.6);
+  position:relative;
+  background: linear-gradient(135deg, rgba(0,234,255,0.04), rgba(57,255,20,0.02));
+  transition: transform .45s ease;
+}
+.member:hover .photo-wrap{ transform: scale(1.06) rotate(-1deg) }
+
+/* neon halo ring */
+.photo-wrap::after{
+  content:"";
+  position:absolute; inset:-8px;
+  border-radius:50%;
+  box-shadow: 0 0 18px rgba(0,234,255,0.12), 0 0 36px rgba(57,255,20,0.06);
+  pointer-events:none;
+  transition: opacity .3s;
+}
+
+/* image inside circle */
+.photo-wrap img{
+  width:130px;height:130px;border-radius:50%;object-fit:cover;border:4px solid rgba(0,0,0,0.45);
+}
+
+/* badges */
+.name{font-weight:700;margin-top:14px;color:#fff;font-size:18px}
+.role{color:rgba(255,255,255,0.78);font-size:14px;margin-top:6px}
+.dept{color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px}
+
+/* social icons row */
+.socials{margin-top:auto; display:flex; gap:10px;align-items:center}
+.socials a{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,0.02);border:1px solid rgba(0,234,255,0.05);
+  color:var(--text);text-decoration:none;font-size:14px;transition:all .25s;
+}
+.socials a:hover{
+  transform:translateY(-4px); box-shadow:0 8px 18px rgba(0,234,255,0.06);
+  color:var(--neon);
+  border-color: rgba(0,234,255,0.22);
+  background:linear-gradient(180deg, rgba(0,234,255,0.02), rgba(255,255,255,0.01));
+}
+
+/* small role ribbon */
+.ribbon{
+  position:absolute; left:12px; top:12px; font-size:12px;
+  background:linear-gradient(90deg, rgba(0,234,255,0.08), rgba(57,255,20,0.05));
+  color:var(--neon); padding:6px 10px; border-radius:8px;
+  border:1px solid rgba(0,234,255,0.06); backdrop-filter: blur(4px);
+}
+
+/* responsive tweaks */
+@media(max-width:600px){
+  .photo-wrap{ width:120px; height:120px }
+  .photo-wrap img{ width:106px; height:106px }
+  .member{ min-height:320px }
+}
+
+/* footer */
+footer{
+  margin-top:36px;padding:22px;text-align:center;color:rgba(255,255,255,0.6);
+  border-top:1px solid rgba(0,234,255,0.03);
+}
+
+/* sparkles (z-index behind content) */
+.sparkle { position: fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+.spark { position:absolute; width:4px; height:4px; background:var(--neon); border-radius:50%;
+  box-shadow: 0 0 8px var(--neon), 0 0 12px var(--neon-2);
+  opacity:0.8; animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(120vh) scale(0.3); opacity:0.15; }
+  100% { transform: translateY(-20vh) scale(1); opacity:1; }
+}
+</style>
+</head>
+<body>
+
+<!-- header -->
+<header class="header-wrap" role="banner" style="z-index:1200;">
+  <div class="nav-wrap">
+    <div class="brand">
+      <!-- sample small logo (replace with your logo) -->
+      <img src="images/osmosis.png" alt="logo">
+<!--       <div class="title">OSMOSIS 2K25</div>
+ -->    </div>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="sports.html">Sports</a>
+      <a href="performing.html">Performing Arts</a>
+      <a href="finearts.html">Fine Arts</a>
+      <a href="literary.html">Literary</a>
+      <a href="finale.html" style="color:var(--neon);font-weight:800">Workforce</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- content -->
+<main style="position:relative;z-index:2;">
+  <section class="hero">
+    <h1>Organising Committee — Workforce</h1>
+    <p class="lead">Meet the team behind Osmosis 2K25 — event leads, coordinators & support crew.</p>
+  </section>
+
+  <div class="container" role="main">
+    <div class="section-head">
+      <h2>Core Team</h2>
+  <!--     <p class="lead">Sample images are used — replace with your own photos by swapping the image URLs.</p> -->
+    </div>
+
+    <div class="grid">
+
+      <!-- Sample member 1 -->
+      <div class="member">
+        <div class="ribbon">Festival Head</div>
+        <div class="photo-wrap">
+          <img src="images/team3.jpeg" alt="member photo">
+        </div>
+        <div class="name">Riya Sharma</div>
+        <div class="role">Festival Convener</div>
+        <div class="dept">Guardian Degree College</div>
+
+        <div class="socials" aria-hidden="true">
+          <a href="#" title="email">✉</a>
+          <a href="#" title="call">📞</a>
+          <a href="#" title="instagram">🔗</a>
+        </div>
+      </div>
+
+      <!-- Sample member 2 -->
+      <div class="member">
+        <div class="ribbon">Events Head</div>
+        <div class="photo-wrap">
+          <img src="images/team1.jpeg" alt="member photo">
+        </div>
+        <div class="name">Aman Patel</div>
+        <div class="role">Sports Coordinator</div>
+        <div class="dept">Physical Education Dept.</div>
+
+        <div class="socials">
+          <a href="#">✉</a>
+          <a href="#">📞</a>
+        </div>
+      </div>
+
+      <!-- Sample member 3 -->
+      <div class="member">
+        <div class="ribbon">Cultural</div>
+        <div class="photo-wrap">
+          <img src="images/team2.jpeg" alt="member photo">
+        </div>
+        <div class="name">Neha Kulkarni</div>
+        <div class="role">Performing Arts Head</div>
+        <div class="dept">Cultural Committee</div>
+
+        <div class="socials">
+          <a href="#">✉</a>
+          <a href="#">🔗</a>
+        </div>
+      </div>
+
+      <!-- Sample member 4 -->
+      <div class="member">
+        <div class="ribbon">Design</div>
+        <div class="photo-wrap">
+          <img src="images/team4.jpeg" alt="member photo">
+        </div>
+        <div class="name">Mohit Deshmukh</div>
+        <div class="role">Graphic & Media Lead</div>
+        <div class="dept">Media Team</div>
+
+        <div class="socials">
+          <a href="#">✉</a>
+          <a href="#">🔗</a>
+        </div>
+      </div>
+
+      <!-- Sample member 5 -->
+      <div class="member">
+        <div class="ribbon">Tech</div>
+        <div class="photo-wrap">
+          <img src="images/team5.jpeg" alt="member photo">
+        </div>
+        <div class="name">Sanket Rao</div>
+        <div class="role">Website & AV</div>
+        <div class="dept">Technical Team</div>
+
+        <div class="socials">
+          <a href="#">✉</a>
+          <a href="#">🔗</a>
+        </div>
+      </div>
+
+      <!-- Sample member 6 -->
+      <div class="member">
+        <div class="ribbon">Logistics</div>
+        <div class="photo-wrap">
+          <img src="images/team6.jpeg" alt="member photo">
+        </div>
+        <div class="name">Kavita Singh</div>
+        <div class="role">Venue & Logistics</div>
+        <div class="dept">Logistics Team</div>
+
+        <div class="socials">
+          <a href="#">✉</a>
+          <a href="#">📞</a>
+        </div>
+      </div>
+
+      <!-- Sample member 7 -->
+      <div class="member">
+        <div class="ribbon">Media</div>
+        <div class="photo-wrap">
+          <img src="images/team7.jpeg" alt="member photo">
+        </div>
+        <div class="name">Pratik Mehra</div>
+        <div class="role">Photographer</div>
+        <div class="dept">Media Team</div>
+
+        <div class="socials">
+          <a href="#">✉</a>
+          <a href="#">🔗</a>
+        </div>
+      </div>
+
+      <!-- Sample member 8 -->
+      <div class="member">
+        <div class="ribbon">Volunteers</div>
+        <div class="photo-wrap">
+          <img src="images/team8.jpeg" alt="member photo">
+        </div>
+        <div class="name">Sana Khan</div>
+        <div class="role">Volunteer Lead</div>
+        <div class="dept">Student Council</div>
+
+        <div class="socials">
+          <a href="#">✉</a>
+          <a href="#">📞</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>© 2025 Guardian Degree College — Osmosis 2K25</footer>
+
+<!-- Sparkle background -->
+<div class="sparkle" aria-hidden="true"></div>
+
+<script>
+// generate sparkles
+const sparkleContainer = document.querySelector('.sparkle');
+for(let i=0;i<45;i++){
+  const s = document.createElement('div');
+  s.className = 'spark';
+  s.style.left = (Math.random()*100) + 'vw';
+  s.style.top = (Math.random()*120) + 'vh';
+  s.style.animationDuration = (4 + Math.random()*6) + 's';
+  s.style.animationDelay = (Math.random()*4) + 's';
+  s.style.opacity = 0.6 + Math.random()*0.4;
+  s.style.transform = `translateY(${Math.random()*40}vh) scale(${0.4 + Math.random()*1})`;
+  sparkleContainer.appendChild(s);
+}
+
+// Accessibility: keyboard focus styles for social links
+document.querySelectorAll('.socials a').forEach(a=>{
+  a.addEventListener('focus', ()=> a.style.boxShadow='0 8px 18px rgba(0,234,255,0.06)');
+  a.addEventListener('blur', ()=> a.style.boxShadow='none');
+});
+</script>
+
+</body>
+</html>
